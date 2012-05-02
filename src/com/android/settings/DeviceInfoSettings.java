@@ -100,7 +100,13 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_MOD_VERSION = "mod_version";
     private static final String KEY_DEVICE_MAINTAINER = "device_maintainer";
     private static final String KEY_MOD_BUILD_DATE = "build_date";
+<<<<<<< HEAD
     private static final String KEY_VENDOR_VERSION = "vendor_version";
+=======
+    private static final String KEY_MOD_API_LEVEL = "mod_api_level";
+    private static final String KEY_CM_UPDATES = "cm_updates";
+    private static final String KEY_DEVICE_MANUFACTURER = "device_manufacturer";
+>>>>>>> 2c5fce3... Added Manufacturer to device info
 
     static final int TAPS_TO_BE_A_DEVELOPER = 7;
     static final int TAPS_TO_SHOW_DEVICEID = 7;
@@ -164,6 +170,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         findPreference(KEY_MOD_VERSION).setEnabled(true);
         setValueSummary(KEY_MOD_BUILD_DATE, "ro.build.date");
         findPreference(KEY_MOD_BUILD_DATE).setEnabled(true);
+<<<<<<< HEAD
         setMaintainerSummary(KEY_DEVICE_MAINTAINER, "ro.aicp.maintainer");
 
         addStringPreference(KEY_DEVICE_CHIPSET,
@@ -179,6 +186,9 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
                 SystemProperties.get("ro.device.rear_cam", null));
         addStringPreference(KEY_DEVICE_SCREEN_RESOLUTION,
                 SystemProperties.get("ro.device.screen_res", null));
+=======
+        setStringSummary(KEY_DEVICE_MANUFACTURER, Build.MANUFACTURER);
+>>>>>>> 2c5fce3... Added Manufacturer to device info
 
         if (!SELinux.isSELinuxEnabled()) {
             String status = getResources().getString(R.string.selinux_status_disabled);
